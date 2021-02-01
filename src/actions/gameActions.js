@@ -9,26 +9,21 @@ const options = {
   },
 };
 
-// axios.request(options).then(function (response) {
-// 	console.log(response.data);
-// }).catch(function (error) {
-// 	console.error(error);
-// });
+const GetGameList = () => async dispatch => {
+  dispatch({
+    type: 'GAME_LIST_LOADING',
+  });
 
-export const GetGameList = () => async dispatch => {
-  try {
-    dispatch({
-      type: 'GAME_LIST_LOADING',
-    });
-
-    const res = await axios.get(options);
-
+  axios.request(options).then(response => {
     dispatch({
       type: 'GAME_LIST_SUCCESS',
+      payload: response.data,
     });
-  } catch (e) {
+  }).catch(() => {
     dispatch({
       type: 'GAME_LIST_FAIL',
     });
-  }
+  });
 };
+
+export default GetGameList;
