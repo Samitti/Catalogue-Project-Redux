@@ -56,7 +56,7 @@ To run tests
 
 Contributions, issues and feature requests are welcome!
 
-Feel free to check the [issues page](https://github.com/Samitti/Calculator-App/issues).
+Feel free to check the [issues page](https://github.com/Samitti/Catalogue-Project-Redux/issues).
 
 ## Show your support
 
