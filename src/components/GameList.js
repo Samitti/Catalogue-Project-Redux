@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import _ from 'lodash';
-import GetGameList from '../actions/gameActions';
+import { GetGameList } from '../actions/gameActions';
 
 const GameList = () => {
   const dispatch = useDispatch();
