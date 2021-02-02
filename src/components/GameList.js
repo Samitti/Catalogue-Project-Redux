@@ -16,9 +16,8 @@ const GameList = () => {
 
   const gameElements = gameList.map(game => (
     <article key={game.id} className="gameItem">
-      <Link to={`./game/${game.id}`} game={game}>
-        <img className="gameitemImg" src={game.thumbnail} alt={game.id} />
-      </Link>
+      <img className="gameitemImg" src={game.thumbnail} alt={game.id} />
+      <Link to={`/game/${game.id}`}>View</Link>
     </article>
   ));
 
