@@ -1,49 +1,59 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import PropTypes from 'prop-types';
 import _ from 'lodash';
-import { GetGame } from '../actions/gameActions';
+import GetGameList from '../actions/gameActions';
 
 const Game = props => {
   const { match } = props;
   const dispatch = useDispatch();
   const gotId = match.params.Game;
-  const game = useSelector(state => state.Game.data);
+  const gotIdInt = parseInt(gotId, 10);
+  const gameList = useSelector(state => state.GameList.data);
 
-  const optionsGame = {
-    method: 'GET',
-    url: 'https://free-to-play-games-database.p.rapidapi.com/api/game',
-    params: { id: `${gotId}` },
-    headers: {
-      'x-rapidapi-key': '82bfac8606mshd93829564699973p18b93fjsn8bc97dd4ae79',
-      'x-rapidapi-host': 'free-to-play-games-database.p.rapidapi.com',
-    },
-  };
   React.useEffect(() => {
-    if (game !== {}) {
-      dispatch(GetGame(optionsGame));
+    if (gameList.length === 0) {
+      dispatch(GetGameList());
     }
   }, [dispatch]);
 
+  console.log(gotId);
+  console.log(gameList);
+
+  const gameElements = gameList.map(game => (
+    <article key={game.id} className="gameItem">
+      {game.id === gotIdInt
+        ? (
+          <div>
+            <h1>{game.title}</h1>
+            <img className="gameitemImg" src={game.thumbnail} alt={game.id} />
+            <p>{game.short_description}</p>
+            <p>{game.platform}</p>
+            <p>
+              <span>Publisher : </span>
+              {game.publisher}
+            </p>
+          </div>
+        )
+        : <p /> }
+    </article>
+  ));
+
   const showData = () => {
-    if (!_.isEmpty(game)) {
+    if (!_.isEmpty(gameList)) {
       return (
-        <div className="gameContainer">
-          <h2>{game.id}</h2>
-          <h2>{game.title}</h2>
-          <img className="gameitemImg" src={game.thumbnail} alt={game.id} />
-          <Link to={game.game_url}>Play Game</Link>
+        <div className="gameListContainer">
+          {gameElements}
         </div>
       );
     }
 
-    if (game.loading) {
+    if (gameList.loading) {
       return <p>Loading...</p>;
     }
 
-    if (game.errorMsg !== '') {
-      return <p>{game.errorMsg}</p>;
+    if (gameList.errorMsg !== '') {
+      return <p>{gameList.errorMsg}</p>;
     }
 
     return <p>Unable to get data msgFrom:GameList-showData method</p>;
