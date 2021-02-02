@@ -6,6 +6,7 @@ import _ from 'lodash';
 import GetGameList from '../actions/gameActions';
 import changeFilter from '../actions/changeFilter';
 import CategoryFilter from './CategoryFilter';
+import '../App.css';
 
 const GameList = ({ category, newCategory }) => {
   const dispatch = useDispatch();
@@ -37,10 +38,10 @@ const GameList = ({ category, newCategory }) => {
     if (!_.isEmpty(gameList)) {
       return (
         <div className="gameListContainer">
-          <div>
+          <div className="filterBar">
             <CategoryFilter category={category} handleCategory={handleCategory} />
           </div>
-          <div>
+          <div className="gameLists">
             {gameElements}
           </div>
         </div>

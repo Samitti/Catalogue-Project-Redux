@@ -17,9 +17,6 @@ const Game = props => {
     }
   }, [dispatch]);
 
-  console.log(gotId);
-  console.log(gameList);
-
   const gameElements = gameList.map(game => (
     <article key={game.id} className="gameItem">
       {game.id === gotIdInt

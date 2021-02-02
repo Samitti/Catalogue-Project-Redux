@@ -11,11 +11,13 @@ function App() {
       <nav>
         <NavLink to="/">Search</NavLink>
       </nav>
-      <Switch>
-        <Route path="/" exact component={GameList} />
-        <Route path="/Game/:Game" exact component={Game} />
-        <Redirect to="/" />
-      </Switch>
+      <div className="gameListContainer">
+        <Switch>
+          <Route path="/" exact component={GameList} />
+          <Route path="/Game/:Game" exact component={Game} />
+          <Redirect to="/" />
+        </Switch>
+      </div>
     </div>
   );
 }

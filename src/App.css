@@ -19,3 +19,40 @@ nav {
 nav a {
   margin-right: 50px;
 }
+
+.gameListContainer {
+  width: 95%;
+  margin: auto;
+  text-align: center;
+}
+
+.gameLists {
+  display: flex;
+  flex-wrap: wrap;
+  background-color: crimson;
+  padding-left: 20px;
+}
+
+.gameItem {
+  margin: 10px;
+  width: 30%;
+}
+
+.gameitemImg {
+  width: 95%;
+}
+
+
+@media only screen and (max-width: 992px) {
+  .gameItem {
+    margin: 10px;
+    width: 45%;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .gameItem {
+    margin: 10px;
+    width: 90%;
+  }
+}
