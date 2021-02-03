@@ -15,7 +15,7 @@ This is the capstone project for React/Redux program. In this project, I build a
 - CSS
 
 
-[Live Demo Link](https://)
+[Live Demo Link](https://free-to-play-games.herokuapp.com/)
 
 
 ![screenshot 1](./public/Capture3.PNG), ![screenshot 1](./public/Capture2.PNG)
