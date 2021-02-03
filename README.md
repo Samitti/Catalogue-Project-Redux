@@ -1,13 +1,14 @@
-# Magic Books
+# Free-To-Play Games Catalogue
 
-This is the capstone project for React/Redux program. In this project I build a cataloge list app with some filter and search capabilities on the data which fetch form an external API and also provide detail information on the selected item. 
+This is the capstone project for React/Redux program. In this project, I build a catalog list responsive app for the list of Free-To-Play Games with some filter capabilities based on the platform of the Game, also provide detailed information on the selected item and a link to the freetogame_profile, if a user likes to visit the game. The app uses free data that is fetched from an external API. 
 
 ## Built With
 
 - Node.js
 - React
 - React-Create-App
-- ReactDOM
+- React-router-dom
+- React-redux
 - Redux
 - npm
 - ES6
@@ -17,7 +18,7 @@ This is the capstone project for React/Redux program. In this project I build a 
 [Live Demo Link](https://)
 
 
-![screenshot 1](./src/screenshot.PNG)
+![screenshot 1](./public/Capture3.PNG), ![screenshot 1](./public/Capture2.PNG)
 
 ## Getting Started
 

@@ -18,18 +18,27 @@ const Game = props => {
   }, [dispatch]);
 
   const gameElements = gameList.map(game => (
-    <article key={game.id} className="gameItem">
+    <article key={game.id}>
       {game.id === gotIdInt
         ? (
-          <div>
-            <h1>{game.title}</h1>
-            <img className="gameitemImg" src={game.thumbnail} alt={game.id} />
-            <p>{game.short_description}</p>
-            <p>{game.platform}</p>
-            <p>
-              <span>Publisher : </span>
-              {game.publisher}
-            </p>
+          <div className="gameItemGame">
+            <div className="lefside">
+              <img className="gameitemImgGame" src={game.thumbnail} alt={game.id} />
+              <div className="insideLeftside">
+                <p>{game.platform}</p>
+                <p>
+                  <span>Publisher : </span>
+                  {game.publisher}
+                </p>
+              </div>
+            </div>
+            <div className="rightSide">
+              <h1>{game.title}</h1>
+              <p>{game.short_description}</p>
+              <a href={`${game.freetogame_profile_url}`} rel="noreferrer" target="_blank" id="playGameLink">
+                <span>PLAY GAME</span>
+              </a>
+            </div>
           </div>
         )
         : <p /> }
@@ -39,7 +48,7 @@ const Game = props => {
   const showData = () => {
     if (!_.isEmpty(gameList)) {
       return (
-        <div className="gameListContainer">
+        <div className="gameListContainerGame">
           {gameElements}
         </div>
       );

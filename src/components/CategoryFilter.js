@@ -15,11 +15,11 @@ function CategoryFilter({ category, handleCategory }) {
   ));
 
   return (
-    <div>
+    <div className="catContainer">
       <label htmlFor="category" id="catLabel">
         GAMES
         {' '}
-        <span>CATEGORIES</span>
+        <span>PLATFORM</span>
         <select id="category-filter" value={category} onChange={handleCategory}>
           {options}
         </select>

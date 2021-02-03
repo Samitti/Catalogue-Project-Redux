@@ -22,10 +22,11 @@ const GameList = ({ category, newCategory }) => {
 
   const gameElements = filteredGames.map(game => (
     <article key={game.id} className="gameItem">
-      <Link to={`./game/${game.id}`} game={game}>
-        <h3>{game.title}</h3>
-        <img className="gameitemImg" src={game.thumbnail} alt={game.id} />
-        <p>{game.platform}</p>
+      <img className="gameitemImg" src={game.thumbnail} alt={game.id} />
+      <p>{game.platform}</p>
+      <h3>{game.title}</h3>
+      <Link to={`./game/${game.id}`} game={game} id="viewLink">
+        <span>VIEW GAME</span>
       </Link>
     </article>
   ));
