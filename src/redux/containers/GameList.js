@@ -36,6 +36,10 @@ const GameList = ({ category, newCategory }) => {
   };
 
   const showData = () => {
+    if (gameList.loading) {
+      return <p>Loading...</p>;
+    }
+
     if (!_.isEmpty(gameList)) {
       return (
         <div className="gameListContainer">
@@ -47,10 +51,6 @@ const GameList = ({ category, newCategory }) => {
           </div>
         </div>
       );
-    }
-
-    if (gameList.loading) {
-      return <p>Loading...</p>;
     }
 
     if (gameList.errorMsg !== '') {

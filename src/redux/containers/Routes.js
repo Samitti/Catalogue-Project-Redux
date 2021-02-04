@@ -9,6 +9,7 @@ const Routes = () => (
   <BrowserRouter>
     <Switch>
       <Route path="/" exact component={GameList} />
+      <Route path="/Game" exact component={GameList} />
       <Route path="/Game/:Game" exact component={Game} />
     </Switch>
   </BrowserRouter>

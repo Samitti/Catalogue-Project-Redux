@@ -5,18 +5,20 @@ import { Provider } from 'react-redux';
 import App from '../App';
 import Store from '../redux/Store';
 
-afterEach(() => {
-  cleanup();
-});
+describe('App', () => {
+  afterEach(() => {
+    cleanup();
+  });
 
-test('renders the home page with no errors', () => {
-  const { getByText } = render(
-    <Provider store={Store}>
-      <Router>
-        <App />
-      </Router>
-    </Provider>,
-  );
+  test('renders the home page with no errors', () => {
+    const { getByText } = render(
+      <Provider store={Store}>
+        <Router>
+          <App />
+        </Router>
+      </Provider>,
+    );
 
-  expect(getByText(/FREE-TO-PLAY GAMES LIST/i)).toBeInTheDocument();
+    expect(getByText(/FREE-TO-PLAY GAMES LIST/i)).toBeInTheDocument();
+  });
 });

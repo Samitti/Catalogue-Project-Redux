@@ -17,7 +17,7 @@ const GameListReducer = (state = DefaultState, action) => {
       return {
         ...state,
         loading: false,
-        errorMsg: 'Unable to get Games msgFrom:GameListReducer',
+        errorMsg: 'Unable to get Games msgFrom GameListReducer',
       };
 
     case 'GAME_LIST_SUCCESS':
