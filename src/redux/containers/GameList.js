@@ -5,8 +5,8 @@ import PropTypes from 'prop-types';
 import _ from 'lodash';
 import GetGameList from '../actions/gameActions';
 import changeFilter from '../actions/changeFilter';
-import CategoryFilter from './CategoryFilter';
-import '../App.css';
+import CategoryFilter from '../../components/CategoryFilter';
+import '../../App.css';
 
 const GameList = ({ category, newCategory }) => {
   const dispatch = useDispatch();

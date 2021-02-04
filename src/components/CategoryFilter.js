@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import categoryOptions from '../containers/constants';
+import categoryOptions from '../redux/containers/constants';
 import '../App.css';
 
 function CategoryFilter({ category, handleCategory }) {

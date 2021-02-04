@@ -1,13 +1,11 @@
 import './App.css';
-import Routes from './components/Routes';
+import NavBar from './components/NavBar';
+import Routes from './redux/containers/Routes';
 
 function App() {
   return (
     <div className="App">
-      <nav className="navBar">
-        <h1>FREE-TO-PLAY GAMES LIST</h1>
-        <a href="/" id="home">HOME</a>
-      </nav>
+      <NavBar />
       <div className="gameListContainer">
         <Routes />
       </div>
