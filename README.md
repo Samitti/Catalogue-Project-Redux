@@ -14,8 +14,10 @@ This is the capstone project for React/Redux program. In this project, I build a
 - ES6
 - CSS
 
+[Live Demo Link Netlify](https://samitti-free-to-play-games-catalogue-redux.netlify.app/)
 
-[Live Demo Link](https://free-to-play-games.herokuapp.com/)
+[Live Demo Link Heroku](https://free-to-play-games.herokuapp.com/)
+
 
 
 ![screenshot 1](./public/Capture3.PNG), ![screenshot 1](./public/Capture2.PNG)
